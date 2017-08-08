@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 
 const ComputerTalk = ({
 	score,
@@ -54,8 +56,8 @@ const ComputerTalk = ({
 };
 
 ComputerTalk.propTypes = {
-	score: React.PropTypes.object.isRequired,
-	status: React.PropTypes.string.isRequired
+	score: PropTypes.object.isRequired,
+	status: PropTypes.string.isRequired
 };
 
 export default(

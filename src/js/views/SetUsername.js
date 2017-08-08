@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const SetUsername = ({
 	classes,
@@ -26,8 +27,8 @@ const SetUsername = ({
 };
 
 SetUsername.propTypes = {
-	onSet: React.PropTypes.func.isRequired,
-	classes: React.PropTypes.string.isRequired
+	onSet: PropTypes.func.isRequired,
+	classes: PropTypes.string.isRequired
 };
 
 export default(

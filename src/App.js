@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 import classNames from 'classnames';
+import PropTypes from 'prop-types';
 
 import SetUsername from './js/views/SetUsername';
 import Game from './js/views/Game';
-import store from './js/stores/index';
+import reducer from './js/reducers/index';
 import {setUsername} from './js/actions/index';
 
-import logo from './logo.svg';
 import './App.css';
 
 const App = ({state}) => {
@@ -33,21 +33,21 @@ const App = ({state}) => {
 				<section className="row align-center">
 					<section className="columns small-8 medium-6 large-4">
 						<SetUsername onSet={(value) => {
-							store.dispatch(setUsername(value));
+							reducer.dispatch(setUsername(value));
 						}} classes={state.username ? 'hide' : ''} />
 					</section>
 				</section>
 			<Game score={state.score} username={state.username} status={state.status} classes={state.username ? '' : 'hide'} />
 			</main>
 			<footer>
-				Created by Knorcedger (Achilleas Tsoumitas) <a href="https://github.com/Knorcedger/rock-paper-scissors">Code on Github</a>
+				Created by lampropoi (Ioanna Lampropoulou) <a href="https://github.com/lampropoi/rock-paper-scissors">Code on Github</a>
 			</footer>
 		</section>
 	)
 };
 
 App.propTypes = {
-	state: React.PropTypes.object.isRequired
+	state: PropTypes.object.isRequired
 };
 
 export default(

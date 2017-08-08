@@ -1,8 +1,17 @@
+// import '../../node_modules/foundation-sites/dist/foundation-flex.css';
+import './css/main.css';
+import './css/foundation.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+import reducer from './js/reducers/index';
 
-ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+const render = () => {
+	ReactDOM.render(
+		<App state={reducer.getState()} />,
+		document.getElementById('root')
+	);
+};
+
+reducer.subscribe(render);
+render();

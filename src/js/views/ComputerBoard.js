@@ -1,5 +1,10 @@
 import React from 'react';
-import ComputerTalk from './ComputerTalk.jsx';
+import ComputerTalk from './ComputerTalk.js';
+import PropTypes from 'prop-types';
+
+import rock from '../../img/Rock.png';
+import paper from '../../img/Paper.png';
+import scissors from '../../img/Scissors.png';
 
 const ComputerBoard = ({
 	onSelect,
@@ -14,19 +19,19 @@ const ComputerBoard = ({
 	}
 	return (
 		<section id="computer-board" className={status === 'computer' ? 'active' : ''}>
-			<img className={status === 'end' && weapons.computer === 'rock' ? '' : 'hide'} src="img/Rock.png" />
-			<img className={status === 'end' && weapons.computer === 'paper' ? '' : 'hide'} src="img/Paper.png" />
-			<img className={status === 'end' && weapons.computer === 'scissors' ? '' : 'hide'} src="img/Scissors.png" />
+			<img className={status === 'end' && weapons.computer === 'rock' ? '' : 'hide'} src={rock} alt="rock" />
+			<img className={status === 'end' && weapons.computer === 'paper' ? '' : 'hide'} src={paper} alt="paper" />
+			<img className={status === 'end' && weapons.computer === 'scissors' ? '' : 'hide'} src={scissors} alt="scissors" />
 			<ComputerTalk status={status} score={score} />
 		</section>
 	)
 };
 
 ComputerBoard.propTypes = {
-	onSelect: React.PropTypes.func.isRequired,
-	status: React.PropTypes.string.isRequired,
-	score: React.PropTypes.object.isRequired,
-	weapons: React.PropTypes.object.isRequired
+	onSelect: PropTypes.func.isRequired,
+	status: PropTypes.string.isRequired,
+	score: PropTypes.object.isRequired,
+	weapons: PropTypes.object.isRequired
 };
 
 export default(

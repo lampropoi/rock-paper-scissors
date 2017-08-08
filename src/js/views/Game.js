@@ -1,6 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-import store from '../stores/index';
+import reducer from '../reducers/index';
 import {computerTurn, playerTurn, computerWin, playerWin, draw,
 	setPlayerWeapon, setComputerWeapon, gameEnd} from '../actions/index';
 
@@ -18,36 +19,36 @@ const Game = ({
 }) => {
 	const checkWinner = (playerWeapon, computerWeapon) => {
 		if (playerWeapon === 'rock' && computerWeapon === 'scissors') {
-			store.dispatch(playerWin());
+			reducer.dispatch(playerWin());
 		} else if (playerWeapon === 'rock' && computerWeapon === 'paper') {
-			store.dispatch(computerWin());
+			reducer.dispatch(computerWin());
 		} else if (playerWeapon === 'rock' && computerWeapon === 'rock') {
-			store.dispatch(draw());
+			reducer.dispatch(draw());
 		} else if (playerWeapon === 'paper' && computerWeapon === 'scissors') {
-			store.dispatch(computerWin());
+			reducer.dispatch(computerWin());
 		} else if (playerWeapon === 'paper' && computerWeapon === 'paper') {
-			store.dispatch(draw());
+			reducer.dispatch(draw());
 		} else if (playerWeapon === 'paper' && computerWeapon === 'rock') {
-			store.dispatch(playerWin());
+			reducer.dispatch(playerWin());
 		} else if (playerWeapon === 'scissors' && computerWeapon === 'scissors') {
-			store.dispatch(draw());
+			reducer.dispatch(draw());
 		} else if (playerWeapon === 'scissors' && computerWeapon === 'paper') {
-			store.dispatch(playerWin());
+			reducer.dispatch(playerWin());
 		} else if (playerWeapon === 'scissors' && computerWeapon === 'rock') {
-			store.dispatch(computerWin());
+			reducer.dispatch(computerWin());
 		}
-		store.dispatch(gameEnd());
+		reducer.dispatch(gameEnd());
 		setTimeout(function() {
 			// start game
-			store.dispatch(playerTurn());
+			reducer.dispatch(playerTurn());
 		}, 3000);
 	}
 	return (
 		<section className={classes + ' row'}>
 			<section className="columns small-order-2 medium-order-1 small-6 medium-4">
-				<PlayerBoard status={status} weapons={store.getState().weapons} onSelect={(weapon) => {
-					store.dispatch(setPlayerWeapon(weapon));
-					store.dispatch(computerTurn());
+				<PlayerBoard status={status} weapons={reducer.getState().weapons} onSelect={(weapon) => {
+					reducer.dispatch(setPlayerWeapon(weapon));
+					reducer.dispatch(computerTurn());
 				}} />
 			</section>
 			<section className="columns small-order-1 medium-order-2 small-12 medium-4">
@@ -55,9 +56,9 @@ const Game = ({
 				<Result score={score} status={status} />
 			</section>
 			<section className="columns small-order-3 medium-order-3 small-6 medium-4">
-				<ComputerBoard status={status} score={score} weapons={store.getState().weapons} onSelect={(weapon) => {
-					store.dispatch(setComputerWeapon(weapon));
-					checkWinner(store.getState().weapons.player, store.getState().weapons.computer);
+				<ComputerBoard status={status} score={score} weapons={reducer.getState().weapons} onSelect={(weapon) => {
+					reducer.dispatch(setComputerWeapon(weapon));
+					checkWinner(reducer.getState().weapons.player, reducer.getState().weapons.computer);
 				}}  />
 			</section>
 		</section>
@@ -65,10 +66,10 @@ const Game = ({
 };
 
 Game.propTypes = {
-	score: React.PropTypes.object.isRequired,
-	username: React.PropTypes.string.isRequired,
-	status: React.PropTypes.string.isRequired,
-	classes: React.PropTypes.string.isRequired
+	score: PropTypes.object.isRequired,
+	username: PropTypes.string.isRequired,
+	status: PropTypes.string.isRequired,
+	classes: PropTypes.string.isRequired
 };
 
 export default(

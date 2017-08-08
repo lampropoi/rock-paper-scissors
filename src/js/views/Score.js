@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Score = ({
 	score,
@@ -24,8 +25,8 @@ const Score = ({
 );
 
 Score.propTypes = {
-	score: React.PropTypes.object.isRequired,
-	username: React.PropTypes.string.isRequired
+	score: PropTypes.object.isRequired,
+	username: PropTypes.string.isRequired
 };
 
 export default(
