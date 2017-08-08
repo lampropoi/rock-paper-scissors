@@ -1,11 +1,14 @@
 import React from 'react';
-import Score from './Score.jsx';
-import PlayerBoard from './PlayerBoard.jsx';
-import ComputerBoard from './ComputerBoard.jsx';
-import Result from './Result.jsx';
-import store from '../stores/index.js';
+
+import store from '../stores/index';
 import {computerTurn, playerTurn, computerWin, playerWin, draw,
-	setPlayerWeapon, setComputerWeapon, gameEnd} from '../actions/index.js';
+	setPlayerWeapon, setComputerWeapon, gameEnd} from '../actions/index';
+
+import Score from './Score';
+import PlayerBoard from './PlayerBoard';
+import ComputerBoard from './ComputerBoard';
+import Result from './Result';
+
 
 const Game = ({
 	score,

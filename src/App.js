@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
+import classNames from 'classnames';
+
+import SetUsername from './js/views/SetUsername';
+import Game from './js/views/Game';
+import store from './js/stores/index';
+import {setUsername} from './js/actions/index';
+
 import logo from './logo.svg';
 import './App.css';
-
-import SetUsername from './SetUsername';
-import Game from './Game';
-import store from '../stores/index';
-import {setUsername} from '../actions/index';
-import classNames from 'classnames';
-// var classNames = require('classnames');
 
 const App = ({state}) => {
 	var subHeader1Class = classNames({

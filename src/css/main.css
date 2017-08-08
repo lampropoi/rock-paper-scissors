@@ -1,0 +1,133 @@
+* {
+	font-family: Helvetica;
+	margin: 0;
+	padding: 0;
+	-webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+	-webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+	-webkit-tap-highlight-color: rgba(0,0,0,0); /* prevent tap highlight color / shadow */
+	-webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+	outline: 0px;
+	/*-webkit-user-modify: read-write-plaintext-only;*/
+}
+
+input[type='text'], input[type='email'], input[type='search'],
+input[type='password'], textarea {
+	-webkit-user-select: text;
+}
+
+body {
+	background: #655999;
+	-webkit-user-select: none;
+	-webkit-touch-callout: none;
+}
+
+h1, h2, h3, h4, h5, h6, {
+	color: #FFFFFF;
+}
+
+a {
+	color: #a9a1cc;
+}
+
+main {
+	margin: 0 auto;
+}
+
+#bar {
+	background: #4a3f7c;
+	box-shadow: #222 0px 3px 2px;
+	height: 40px;
+}
+
+#bar h1 {
+	font-size: 18px;
+	padding: 10px;
+	color: #FFFFFF;
+}
+
+header h2 {
+	font-size: 20px;
+	padding: 40px 10px 10px 10px;
+	color: #FFFFFF;
+}
+
+.sub-header h2 {
+	text-align: center;
+}
+
+#set-username {
+	color: #FFFFFF;
+}
+
+#set-username form {
+	text-align: center;
+}
+
+#player-board {
+	text-align: center;
+}
+
+#player-board button:hover {
+	-webkit-filter: brightness(150%);
+	filter: brightness(150%);
+	transition: 1s;
+}
+
+#player-board button:active {
+	-webkit-filter: brightness(70%);
+	filter: brightness(70%);
+	transition: 0.5s;
+	outline: none;
+}
+
+#player-board button[disabled] {
+	opacity: 0.7;
+	-webkit-filter: grayscale(100%);
+	filter: grayscale(100%);
+}
+
+#player-board button.selected[disabled] {
+	opacity: 1;
+}
+
+#result-message h3 {
+	text-align: center;
+	color: #FFFFFF;
+}
+
+#scores h3 {
+	color: #FFFFFF;
+	text-align: center;
+}
+
+#computer-board {
+	text-align: center;
+}
+
+#computer-board h4 {
+	color: #77D6E5;
+}
+
+#computer-talk {
+	text-align: center;
+}
+
+table thead {
+	background: #75ABBF;
+	border-color: #75ABBF;
+}
+
+table thead th {
+	text-align: center;
+}
+
+table tbody {
+	text-align: center;
+}
+
+footer {
+	color: #FFFFFF;
+	font-size: 14px;
+	float: right;
+	padding: 10px;
+}
