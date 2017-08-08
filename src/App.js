@@ -11,13 +11,11 @@ import './App.css';
 
 const App = ({state}) => {
 	var subHeader1Class = classNames({
-		'columns': true,
-		'small-8': true,
+		'header1': true,
 		'hide': state.username
 	});
 	var subHeader2Class = classNames({
-		'columns': true,
-		'small-12': true,
+		'header2': true,
 		'hide': !state.username
 	});
 	return (
@@ -31,7 +29,7 @@ const App = ({state}) => {
 			</header>
 			<main>
 				<section className="row align-center">
-					<section className="columns small-8 medium-6 large-4">
+					<section className="username-container">
 						<SetUsername onSet={(value) => {
 							reducer.dispatch(setUsername(value));
 						}} classes={state.username ? 'hide' : ''} />
@@ -39,9 +37,6 @@ const App = ({state}) => {
 				</section>
 			<Game score={state.score} username={state.username} status={state.status} classes={state.username ? '' : 'hide'} />
 			</main>
-			<footer>
-				Created by lampropoi (Ioanna Lampropoulou) <a href="https://github.com/lampropoi/rock-paper-scissors">Code on Github</a>
-			</footer>
 		</section>
 	)
 };

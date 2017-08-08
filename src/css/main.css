@@ -57,6 +57,13 @@ header h2 {
 
 #set-username {
 	color: #FFFFFF;
+	/*width: 50%;
+	margin-left: 25%;*/
+}
+
+.username-container {
+	display: flex;
+	justify-content: center;
 }
 
 #set-username form {
@@ -105,7 +112,7 @@ header h2 {
 }
 
 #computer-board h4 {
-	color: #77D6E5;
+	color: #655999;
 }
 
 #computer-talk {
@@ -118,7 +125,7 @@ table thead {
 }
 
 table thead th {
-	text-align: center;
+	text-align: center !important;
 }
 
 table tbody {
@@ -126,8 +133,29 @@ table tbody {
 }
 
 footer {
-	color: #FFFFFF;
+	color: black;
 	font-size: 14px;
 	float: right;
-	padding: 10px;
+	position: fixed;
+	bottom: 10px;
+	right: 10px;
+}
+
+button.success {
+	background: #e2dc0d !important;
+	border-radius: 4px;
+	color: #655999 !important;
+	font-weight: bold;
+}
+
+button.success:hover {
+	background: #655999 !important;
+	color: #e2dc0d !important;
+}
+
+.header1 {
+	color: #655999;
+}
+.header2 {
+	color: #655999;
 }
